@@ -45,8 +45,7 @@ function installPackages(packages: string[], isDev: boolean) {
       resolve();
     }
 
-    const args = isDev ? ['add', ...packages] : ['add', '--dev', ...packages];
-    const child = spawn(binPath('yarn'), args, {
+    const args = isDev ? ['add', '--dev', ...packages] : ['add', ...packages];
       cwd: process.cwd(),
       stdio: 'inherit',
     });
