@@ -33,13 +33,14 @@ export default {
       'tslint-config-prettier',
 
       // eslint
-      'eslint',
-      'eslint-config-airbnb',
-      'eslint-config-prettier',
-      'eslint-import-resolver-typescript',
-      'eslint-plugin-import',
-      'eslint-plugin-jsx-a11y',
-      'eslint-plugin-react',
+      // Using specific version because of compatibility issue
+      'eslint@^5.4.0',
+      'eslint-config-airbnb@^17.1.0',
+      'eslint-config-prettier@^3.0.1',
+      'eslint-import-resolver-typescript@^1.1.1',
+      'eslint-plugin-import@^2.14.0',
+      'eslint-plugin-jsx-a11y@^6.1.1',
+      'eslint-plugin-react@^7.11.0',
 
       // code formatting
       'prettier',
