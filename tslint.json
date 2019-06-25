@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "array-type": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-no-multiline-js": false,
+    "jsx-no-lambda": false,
+    "ordered-imports": false,
+    "no-console": {
+      "severity": "warning"
+    },
+    "type-literal-delimiter": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "variable-name": [true, "check-format", "allow-leading-underscore"],
+    "interface-over-type-literal": false,
+    "trailing-comma": [true, { "multiline": "always" }]
+  },
+  "rulesDirectory": []
+}

@@ -1,0 +1,14 @@
+{
+  //Using double space as tab
+  "editor.tabSize": 2,
+  //Prettier will use single quote on string
+  "prettier.singleQuote": true,
+  //Prettier will use tabs set up above
+  "prettier.useTabs": true,
+  //Prettier will adjust rule based on eslint
+  "prettier.eslintIntegration": true,
+  //formate on save trigger
+  "editor.formatOnSave": true,
+  "editor.scrollBeyondLastLine": false,
+  "files.insertFinalNewline": true
+}

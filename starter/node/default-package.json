@@ -1,0 +1,27 @@
+{
+  "name": "$NAME",
+  "version": "0.1.0",
+  "description": "$NAME",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "babel src --ignore \"_*\" --out-dir lib --extensions '.ts'",
+    "start": "npm run build && node ./lib/main.js",
+    "format": "prettier --write ./src/**/*.ts ./src/**/*.js",
+    "lint": "tslint -c tslint.json --fix './src/**/*.ts' && eslint ./src --fix",
+    "test-lint": "tslint -c tslint.json './src/**/*.ts' && eslint ./src --max-warnings 0",
+    "test-src": "jest --passWithNoTests",
+    "typecheck": "tsc",
+    "test": "npm run test-lint && npm run typecheck && npm run test-src",
+    "serve": "nodemon src/main.ts -e js,ts,jsx,tsx,graphql -x babel-node"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  }
+}

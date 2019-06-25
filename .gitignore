@@ -1,0 +1,9 @@
+_*
+!__tests__
+/lib
+/node_modules
+npm-debug.log
+.env
+yarn-error.log
+.DS_Store
+.yarn
