@@ -21,6 +21,7 @@ export default {
     devPackages: [
       // babel
       '@babel/core',
+      '@babel/cli',
       '@babel/preset-env',
       '@babel/preset-typescript',
 
