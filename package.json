@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "cross-spawn": "^6.0.5",
     "shelljs": "^0.7.0",
     "yarn": "^0.19.1"
   },
@@ -26,6 +27,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/preset-env": "7.2.3",
     "@babel/preset-typescript": "^7.1.0",
+    "@types/cross-spawn": "^6.0.0",
     "@types/shelljs": "^0.8.5",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
