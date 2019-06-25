@@ -4,7 +4,7 @@
   "description": "$NAME",
   "main": "lib/main.js",
   "scripts": {
-    "build": "babel src --ignore \"_*\" --out-dir lib --extensions '.ts'",
+    "build": "babel src --ignore \"_*\" --out-dir lib --extensions .ts",
     "start": "npm run build && node ./lib/main.js",
     "format": "prettier --write ./src/**/*.ts ./src/**/*.js",
     "lint": "tslint -c tslint.json --fix './src/**/*.ts' && eslint ./src --fix",
