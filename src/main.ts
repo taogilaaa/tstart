@@ -1,3 +1,4 @@
+// tslint:disable: no-console
 import program from 'commander';
 import shelljs from 'shelljs';
 import spawn from 'cross-spawn';

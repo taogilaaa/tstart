@@ -9,10 +9,10 @@
     "prepublish": "npm run build",
     "build": "rimraf lib && babel src --ignore \"_*\" --out-dir lib --extensions .ts",
     "build-watch": "babel src --watch --ignore \"_*\" --out-dir lib --extensions .ts",
-    "lint": "eslint . --max-warnings 0",
-    "typecheck": "flow",
-    "test-src": "jest",
-    "test": "npm run lint && npm run typecheck && npm run test-src"
+    "test-lint": "tslint -c tslint.json './src/**/*.ts'",
+    "test-src": "jest --passWithNoTests",
+    "typecheck": "tsc",
+    "test": "npm run test-lint && npm run typecheck && npm run test-src"
   },
   "dependencies": {
     "commander": "^2.20.0",

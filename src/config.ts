@@ -15,6 +15,7 @@ export default {
     seedFiles: {
       '.vscode/settings.json':
         '{\r\n  //Using double space as tab\r\n  "editor.tabSize": 2,\r\n  //Prettier will use single quote on string\r\n  "prettier.singleQuote": true,\r\n  //Prettier will use tabs set up above\r\n  "prettier.useTabs": true,\r\n  //Prettier will adjust rule based on eslint\r\n  "prettier.eslintIntegration": true,\r\n  //formate on save trigger\r\n  "editor.formatOnSave": true,\r\n  "editor.scrollBeyondLastLine": false,\r\n  "files.insertFinalNewline": true\r\n}\r\n',
+      // tslint:disable-next-line: quotemark
       'src/main.ts': "console.log('Hello World');\n",
     },
     packages: [],
