@@ -1,6 +1,6 @@
 import program from 'commander';
 import shelljs from 'shelljs';
-import { spawn } from 'child_process';
+import spawn from 'cross-spawn';
 import path from 'path';
 import { version } from '../package.json';
 import CONFIG from './config';
@@ -19,8 +19,8 @@ program
   .description(
     'Create a directory with the given name and initialize an empty project.',
   )
-  .action(async (name) => {
-    await createProject(name, program.type);
+  .action((name) => {
+    createProject(name, program.type);
   });
 
 program.on('command:*', () => {
@@ -40,28 +40,18 @@ function binPath(name: string) {
 }
 
 function installPackages(packages: string[], isDev: boolean) {
-  return new Promise((resolve) => {
-    if (packages.length === 0) {
-      resolve();
-    }
+  if (packages.length === 0) {
+    return;
+  }
 
-    const args = isDev ? ['add', '--dev', ...packages] : ['add', ...packages];
-      cwd: process.cwd(),
-      stdio: 'inherit',
-    });
-
-    child.on('close', (code) => {
-      if (code !== 0) {
-        console.log(`yarn exited with code ${code}`);
-        process.exit();
-      } else {
-        resolve();
-      }
-    });
+  const args = isDev ? ['add', '--dev', ...packages] : ['add', ...packages];
+  spawn.sync('yarn', args, {
+    cwd: process.cwd(),
+    stdio: 'inherit',
   });
 }
 
-async function createProject(name: string, type: ProjectType) {
+function createProject(name: string, type: ProjectType) {
   if (!CONFIG.hasOwnProperty(type)) {
     console.log(`Type "${type}" not yet supported.`);
     return;
@@ -100,8 +90,8 @@ async function createProject(name: string, type: ProjectType) {
   }
 
   console.log('Installing packages ...');
-  await installPackages(config.packages, false);
+  installPackages(config.packages, false);
 
   console.log('Installing dev packages ...');
-  await installPackages(config.devPackages, true);
+  installPackages(config.devPackages, true);
 }
