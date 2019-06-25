@@ -35,7 +35,7 @@ if (!program.args || program.args.length < 1) {
   process.exit(1);
 }
 
-function binPath(name: string) {
+function localBinPath(name: string) {
   return path.join(__dirname, '../node_modules/.bin', name);
 }
 
@@ -45,7 +45,7 @@ function installPackages(packages: string[], isDev: boolean) {
   }
 
   const args = isDev ? ['add', '--dev', ...packages] : ['add', ...packages];
-  spawn.sync('yarn', args, {
+  spawn.sync(localBinPath('yarn'), args, {
     cwd: process.cwd(),
     stdio: 'inherit',
   });
