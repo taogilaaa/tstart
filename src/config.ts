@@ -42,8 +42,6 @@ export default {
 
       // code formatting
       'prettier',
-      'prettier-eslint',
-      'prettier-eslint-cli',
 
       // testing
       'jest',
