@@ -48,6 +48,10 @@ export default {
       // testing
       'jest',
 
+      // @types
+      '@types/jest',
+      '@types/node',
+
       // others
       'nodemon',
     ],
