@@ -1,6 +1,6 @@
 {
   "name": "tstart",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Quick start for your JS projects",
   "bin": {
     "tstart": "./bin/tstart.js"
